@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Bookmark,
   ChevronLeft,
@@ -13,11 +15,67 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import Saudacao from "./components/Saudacao";
 import PlayComponent from "./components/PlayComponent";
+import {
+  useState,
+  useRef,
+  MouseEventHandler,
+  useEffect,
+  InputHTMLAttributes,
+} from "react";
 
 export default function Home() {
+  const [width, setWidth] = useState(266);
+  const myRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLDivElement>(null);
+
+  function handleResize(event: React.ChangeEvent<HTMLInputElement>) {
+    setWidth(parseInt(event.currentTarget.value));
+  }
+
+  // useEffect(() => {
+  //   if (myRef.current) {
+  //     myRef.current.style.width = `${width}px`;
+  //   }
+  // }, [width]);
+
+  useEffect(() => {
+    if (myRef.current) {
+      myRef.current.style.width = `${width}px`;
+
+      const left = myRef.current.offsetLeft + myRef.current.offsetWidth;
+      const top = myRef.current.offsetTop;
+      if (inputRef.current) {
+        inputRef.current.style.left = `${left}px`;
+        inputRef.current.style.top = `${top}px`;
+      }
+    }
+  }, [width]);
+
   return (
-    <div className="h-screen flex flex-col bg-neutral-900 relative">
-      <div className="flex absolute w-full h-full">
+    <div className="h-screen flex flex-col items-center justify-center bg-neutral-900 relative">
+      <div className="flex flex-row gap-20 items-center justify-center  h-5/6 w-auto">
+        <aside className="flex border-2 p-2 items-center" ref={myRef}>
+          ASIDE
+        </aside>
+        <div
+          className="LayoutResizer__resize-bar LayoutResizer__inline-end"
+          ref={inputRef}
+        >
+          <label className="hidden-visually">
+            <input
+              className="LayoutResizer__input"
+              type="range"
+              min="120"
+              max="384"
+              step="10"
+              value={width}
+              onChange={handleResize}
+            />
+          </label>
+        </div>
+        <main className="flex-1 border-2 p-2">MAIN</main>
+      </div>
+      {/* <div className="flex absolute w-full h-full">
         <aside className="w-64 p-6 bg-zinc-950 text-sm relative">
           <div className="mac-icons flex items-center gap-4">
             <div className="w-3 h-3 bg-red-500 rounded-full" />
@@ -135,7 +193,7 @@ export default function Home() {
       </div>
       <footer className="bg-neutral-800 relative border-t border-zinc-700 p-6 w-auto">
         footer -
-      </footer>
+      </footer> */}
     </div>
   );
 }

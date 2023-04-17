@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./teste.css";
 
 export const metadata = {
   title: "Spotify Clone",

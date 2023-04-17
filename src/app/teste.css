@@ -1,0 +1,57 @@
+.LayoutResizer__resize-bar {
+  cursor: col-resize;
+  opacity: 1;
+  position: absolute;
+}
+.LayoutResizer__inline-start {
+  background-color: #aaa;
+  height: 100%;
+  inset-inline-start: -4.5px;
+  left: -4.5px;
+  width: 9px;
+}
+[dir="rtl"] .LayoutResizer__inline-start {
+  left: auto;
+  right: -4.5px;
+}
+.LayoutResizer__inline-end {
+  background-color: #aaa;
+  height: 100%;
+  inset-inline-end: -4.5px;
+  right: -4.5px;
+  width: 9px;
+}
+[dir="rtl"] .LayoutResizer__inline-end {
+  left: -4.5px;
+  right: auto;
+}
+.LayoutResizer__resize-bar--resizing,
+.LayoutResizer__resize-bar:focus-within,
+.LayoutResizer__resize-bar:hover {
+  opacity: 1;
+}
+.LayoutResizer__resize-bar-east {
+  cursor: e-resize;
+}
+.LayoutResizer__resize-bar-west,
+[dir="rtl"] .LayoutResizer__resize-bar-east {
+  cursor: w-resize;
+}
+[dir="rtl"] .LayoutResizer__resize-bar-west {
+  cursor: e-resize;
+}
+.LayoutResizer__resize-bar:focus-within {
+  outline: 5px auto #3673d4;
+}
+.LayoutResizer__resize-overlay {
+  bottom: 0;
+  cursor: col-resize;
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+}
+html[dir="ltr"] .LayoutResizer__inline-start .LayoutResizer__input {
+  direction: rtl;
+}
