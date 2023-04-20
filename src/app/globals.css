@@ -2,17 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* aside,
+main,
+.resizer {
+  height: 88%; 
+} */
+
+/* .container {
+  height: 88%;
+  width: 100%;
+} */
+
 footer {
-  top: 89%;
+  top: 88%;
 }
 
-aside {
-  height: 89%;
+.resizer {
+  cursor: col-resize;
 }
 
-/* .wrapper {
-  padding-left: 6rem;
-  padding-right: 6rem;
+.resizer:hover {
+  width: "400px";
+  overflow: hidden;
+  user-select: none;
+}
+
+/* .footer {
+  left: 0;
+  /* top: %; 
+
 } */
 
 *::-webkit-scrollbar {
