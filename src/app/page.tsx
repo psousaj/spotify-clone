@@ -53,11 +53,11 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen w-screen flex flex-col justify-between bg-neutral-900 relative">
+    <div className="teste h-full w-screen flex flex-col bg-neutral-900 relative">
       <div
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="container flex justify-center absolute"
+        className="flex flex-grow bg-slate-300 relative"
       >
         <aside
           ref={asideRef}
@@ -137,9 +137,9 @@ export default function Home() {
         >
           <StretchHorizontal color="#0F0D0D" strokeWidth={1} />
         </div>
-        <main className="px-8 flex flex-1 flex-col w-auto relative text-white z-20">
-          <section className="header-info">
-            <header className="flex flex-row justify-between h-max py-4 m-none bg-neutral-900/70">
+        <main className="flex flex-1 flex-col h-auto w-auto relative text-white z-20">
+          <section className="container header-info">
+            <header className="flex flex-row justify-between h-max py-4 bg-neutral-900/70">
               <div className="flex items-center gap-4">
                 <button className="rounded-full bg-black/40 p-1">
                   <ChevronLeft />
@@ -167,27 +167,32 @@ export default function Home() {
                 </div>
               </div>
             </header>
+          </section>
+          <section className="container main">
             <div className="my-6 text-3xl font-bold">
               <Saudacao />
             </div>
+            <div className="fotoAlbums grid grid-cols-3 gap-4 place-items-center">
+              <AlbumComponent nome="Só rock bão" />
+              <AlbumComponent nome="Ultimate Rock Gaming" image="album2.jpeg" />
+              <AlbumComponent nome="Nice Trip Songs" image="album3.jpeg" />
+              <AlbumComponent
+                nome="Rádio de Behind Blue Eyes"
+                image="album4.jpeg"
+              />
+              <AlbumComponent
+                nome="Rádio de Into the Fire"
+                image="album5.jpeg"
+              />
+              <AlbumComponent
+                nome="Metal, NuMetal, Hard e Heavy Rock"
+                image="album6.jpeg"
+              />
+            </div>
           </section>
-          <div className="fotoAlbums grid grid-cols-3 gap-4">
-            <AlbumComponent nome="Só rock bão" />
-            <AlbumComponent nome="Ultimate Rock Gaming" image="album2.jpeg" />
-            <AlbumComponent nome="Nice Trip Songs" image="album3.jpeg" />
-            <AlbumComponent
-              nome="Rádio de Behind Blue Eyes"
-              image="album4.jpeg"
-            />
-            <AlbumComponent nome="Rádio de Into the Fire" image="album5.jpeg" />
-            <AlbumComponent
-              nome="Metal, NuMetal, Hard e Heavy Rock"
-              image="album6.jpeg"
-            />
-          </div>
         </main>
       </div>
-      <footer className="bg-neutral-800 absolute border-t border-zinc-700 p-6 z-20">
+      <footer className="bg-neutral-800 relative border-t border-zinc-700 p-6 z-20">
         footer -
       </footer>
     </div>

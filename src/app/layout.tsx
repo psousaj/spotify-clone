@@ -13,7 +13,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="text-slate-300">{children}</body>
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          boxSizing: "border-box",
+          display: "flex",
+          // height: "max-content",
+          height: "100%",
+          flexShrink: 1,
+        }}
+        className="text-slate-300"
+      >
+        {children}
+      </body>
     </html>
   );
 }

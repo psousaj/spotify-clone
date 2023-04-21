@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* aside,
-main,
-.resizer {
-  height: 88%; 
-} */
+html {
+  height: 100%;
+}
 
-/* .container {
-  height: 88%;
-  width: 100%;
-} */
+.container {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
 
-footer {
-  top: 88%;
+@media (min-width: 1280px) {
+  .container {
+    max-width: 100% !important;
+  }
 }
 
 .resizer {
@@ -26,12 +26,6 @@ footer {
   overflow: hidden;
   user-select: none;
 }
-
-/* .footer {
-  left: 0;
-  /* top: %; 
-
-} */
 
 *::-webkit-scrollbar {
   width: 10px;
