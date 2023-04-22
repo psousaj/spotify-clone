@@ -1,4 +1,5 @@
 import "./globals.css";
+import Main from "./main/page";
 
 export const metadata = {
   title: "Spotify Clone",
@@ -24,7 +25,7 @@ export default function RootLayout({
         }}
         className="text-slate-300"
       >
-        {children}
+        <Main>{children}</Main>
       </body>
     </html>
   );

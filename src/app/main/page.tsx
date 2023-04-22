@@ -9,7 +9,7 @@ export default function Main(props: MainProps) {
   const [width, setWidth] = useState(260);
   const [initialMouseX, setInitialMouseX] = useState(0);
 
-  const minWidth = 120;
+  const minWidth = 140;
   const maxWidth = 380;
 
   const asideRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export default function Main(props: MainProps) {
           <section className="container header-info">
             <Header setOpen={setOpen} open={open} />
           </section>
-          {props.children}
+          <div className="overflow-auto">{props.children}</div>
         </main>
       </div>
       <Footer />

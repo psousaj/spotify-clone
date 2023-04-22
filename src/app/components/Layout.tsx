@@ -35,7 +35,7 @@ export function Aside({ asideRef, width }: AsideProps) {
       </div>
       <nav className="home-buttons space-y-5 mt-8">
         <a
-          href=""
+          href="/"
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <HomeIcon />
@@ -176,7 +176,9 @@ export function Header({ open, setOpen }: HeaderProps) {
                   </button>
                 </li>
                 <li>
-                  <button>Configurações</button>
+                  <a href="/configuracoes">
+                    <button>Configurações</button>
+                  </a>
                 </li>
                 <li>
                   <button>Sair</button>
