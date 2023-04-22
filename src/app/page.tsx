@@ -4,6 +4,7 @@ import {
   Bookmark,
   ChevronLeft,
   ChevronRight,
+  ExternalLink,
   Heart,
   Home as Homeicon,
   Library,
@@ -12,18 +13,20 @@ import {
   StretchHorizontal,
   User,
 } from "lucide-react";
+import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import Saudacao from "./components/Saudacao";
 import AlbumComponent from "./components/AlbumComponent";
-import { useState, useRef } from "react";
+import Modal from "./components/layout/Modal";
 
 export default function Home() {
   const [isResizing, setIsResizing] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [width, setWidth] = useState(260);
   const [initialMouseX, setInitialMouseX] = useState(0);
 
-  const minWidth = 180;
+  const minWidth = 120;
   const maxWidth = 380;
 
   const asideRef = useRef<HTMLDivElement>(null);
@@ -57,7 +60,7 @@ export default function Home() {
       <div
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="flex flex-grow bg-slate-300 relative"
+        className="flex flex-grow relative"
       >
         <aside
           ref={asideRef}
@@ -133,11 +136,14 @@ export default function Home() {
         <div
           ref={divRef}
           onMouseDown={handleMouseDown}
-          className="z-30 resizer w-1 relative flex items-center hover:bg-slate-200/80 "
+          className="z-30 resizer w-1 relative flex items-center hover:bg-slate-200/80 active:bg-slate-200/80"
         >
           <StretchHorizontal color="#0F0D0D" strokeWidth={1} />
         </div>
-        <main className="flex flex-1 flex-col h-auto w-auto relative text-white z-20">
+        <main
+          style={{ width: `calc(100vw-(${width}/100vw)*100)` }}
+          className="flex flex-1 flex-col h-auto relative text-white z-20"
+        >
           <section className="container header-info">
             <header className="flex flex-row justify-between h-max py-4 bg-neutral-900/70">
               <div className="flex items-center gap-4">
@@ -148,22 +154,62 @@ export default function Home() {
                   <ChevronRight />
                 </button>
               </div>
-              <div className="flex flex-row gap-10">
-                <button className="border border-x-2 border-x-white rounded-full p-1 px-3">
+              <div className="flex flex-row gap-1">
+                <button className="scale-90 border border-zinc-700 hover:scale-95 hover:border-1 hover:border-white rounded-full p-1 px-3">
                   Faça Upgrade
                 </button>
-                <div>
-                  <button className="flex flex-row gap-2 items-center bg-black p-0.5 rounded-full">
+                <div className="scale-90 relative">
+                  <button
+                    onClick={() => setOpen(!open)}
+                    className="flex flex-row gap-2 items-center bg-black p-0.5 rounded-full hover:bg-zinc-800/60"
+                  >
                     <div className="bg-zinc-500/40 rounded-full p-1">
                       <User />
                     </div>
                     <span>jp_filho</span>
                     <FontAwesomeIcon
-                      icon={faCaretDown}
+                      icon={!open ? faCaretDown : faCaretUp}
                       color="white"
                       className="w-6 h-6"
                     />
                   </button>
+                  <Modal
+                    styles={{
+                      backgroundColor: "#202020",
+                      width: "200%",
+                      minWidth: "100%",
+                      height: "auto",
+                      display: "inline-block",
+                      position: "absolute",
+                      right: 0,
+                      marginTop: "0.5rem",
+                    }}
+                    open={open}
+                  >
+                    <div className="modal-content">
+                      <ul className="w-full text-sm">
+                        <li>
+                          <button>
+                            Conta <ExternalLink />
+                          </button>
+                        </li>
+                        <li>
+                          <button>Perfil</button>
+                        </li>
+                        <li>
+                          <button>
+                            Faça upgrade para o premium <ExternalLink />
+                          </button>
+                        </li>
+                        <li>
+                          <button>Configurações</button>
+                        </li>
+                        <li>
+                          <button>Sair</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </Modal>
                 </div>
               </div>
             </header>
@@ -172,7 +218,7 @@ export default function Home() {
             <div className="my-6 text-3xl font-bold">
               <Saudacao />
             </div>
-            <div className="fotoAlbums grid grid-cols-3 gap-4 place-items-center">
+            <div className="fotoAlbums grid grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-4 place-items-center">
               <AlbumComponent nome="Só rock bão" />
               <AlbumComponent nome="Ultimate Rock Gaming" image="album2.jpeg" />
               <AlbumComponent nome="Nice Trip Songs" image="album3.jpeg" />

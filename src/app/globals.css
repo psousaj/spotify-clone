@@ -6,6 +6,25 @@ html {
   height: 100%;
 }
 
+.player:hover .player-icon {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content ul li button {
+  padding: 7px;
+  padding-left: 10px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content ul li :hover {
+  background-color: rgb(63 63 70);
+}
+
 .container {
   padding-right: 2rem;
   padding-left: 2rem;
