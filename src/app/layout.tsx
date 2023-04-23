@@ -1,5 +1,6 @@
 import "./globals.css";
 import Main from "./main/page";
+import React from "react";
 
 export const metadata = {
   title: "Spotify Clone",
