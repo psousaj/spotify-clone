@@ -201,10 +201,6 @@ export function Header({ open, setOpen }: HeaderProps) {
   );
 }
 
-export function Footer() {
-  return (
-    <footer className="bg-neutral-800 relative border-t border-zinc-700 p-6 z-20">
-      footer -
-    </footer>
-  );
+export function Footer({ className }: { className: string }) {
+  return <footer className={className}>footer -</footer>;
 }

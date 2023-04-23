@@ -38,7 +38,7 @@ export default function Main(props: MainProps) {
   }
 
   return (
-    <div className="teste h-full w-screen flex flex-col bg-neutral-900 relative">
+    <div className="main-container h-full max-w-full flex flex-col bg-neutral-900 relative">
       <div
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
@@ -46,16 +46,14 @@ export default function Main(props: MainProps) {
       >
         <Aside asideRef={asideRef} width={width} />
         <Draggable divRef={divRef} handleMouseDown={handleMouseDown} />
-        <main
-          className="flex flex-1 flex-col h-auto relative text-white z-20"
-        >
-          <section className="container header-info">
+        <main className="flex flex-1 flex-col h-full w-full relative text-white z-20 overflow-hidden">
+          <section className="container overflow-hidden">
             <Header setOpen={setOpen} open={open} />
+            <div>{props.children}</div>
           </section>
-          <div className="overflow-auto">{props.children}</div>
+          <Footer className="absolute order-3 bottom-0 left-0 w-full bg-neutral-800 border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2" />
         </main>
       </div>
-      <Footer />
     </div>
   );
 }
