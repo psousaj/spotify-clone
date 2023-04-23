@@ -12,12 +12,44 @@ export default function Home() {
         <AlbumComponent nome="Só rock bão" />
         <AlbumComponent nome="Ultimate Rock Gaming" image="album2.jpeg" />
         <AlbumComponent nome="Nice Trip Songs" image="album3.jpeg" />
-        <AlbumComponent nome="Rádio de Behind Blue Eyes" image="album4.jpeg" />
-        <AlbumComponent nome="Rádio de Into the Fire" image="album5.jpeg" />
+        <AlbumComponent nome="Mix Rock" image="mixrock.jpeg" />
+        <AlbumComponent nome="Daily Mix 5" image="dailymix5.jpeg" />
         <AlbumComponent
-          nome="Metal, NuMetal, Hard e Heavy Rock"
-          image="album6.jpeg"
+          nome="Radar de Novidades"
+          image="radardenovidades.jpeg"
         />
+      </div>
+      <div className="flex flex-row items-center justify-center flex-wrap gap-6 mt-8">
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
+        <div className="bg-zinc-800 w-44 h-52 flex items-center text-teal-300">
+          -
+        </div>
       </div>
     </section>
   );
