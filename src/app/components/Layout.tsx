@@ -35,64 +35,64 @@ export function Aside({ asideRef, width }: AsideProps) {
         <div className="w-3 h-3 bg-green-500 rounded-full" />
       </div>
       <nav className="home-buttons space-y-5 mt-8">
-        <a
+        <Link
           href="/"
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <HomeIcon />
           Home
-        </a>
-        <a
+        </Link>
+        <Link
           href=""
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <Search />
           Search
-        </a>
-        <a
+        </Link>
+        <Link
           href=""
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <Library />
           Your Library
-        </a>
+        </Link>
       </nav>
       <nav className="plus-home-buttons space-y-5 mt-8">
-        <a
+        <Link
           href=""
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <PlusSquare />
           <span>Criar Playlist</span>
-        </a>
-        <a
+        </Link>
+        <Link
           href=""
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <Heart />
           <span>Músicas Curtidas</span>
-        </a>
-        <a
+        </Link>
+        <Link
           href=""
           className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white"
         >
           <Bookmark />
           <span>Seus Episódios</span>
-        </a>
+        </Link>
       </nav>
       <div className="border-t border-zinc-800 my-5"></div>
       <nav className="overflow-y-scroll m-1 h-40 flex flex-col gap-2">
-        <a href="">Metal, Nu Metal, Hard e Heavy Rock</a>
-        <a href="">Só Rock Bão</a>
-        <a href="">Mix Forró</a>
-        <a href="">Top Gaming Tracks</a>
-        <a href="">Dance Hits</a>
-        <a href="">Playlist</a>
-        <a href="">Playlist</a>
-        <a href="">Playlist</a>
-        <a href="">Playlist</a>
-        <a href="">Playlist</a>
-        <a href="">Playlist</a>
+        <Link href="">Metal, Nu Metal, Hard e Heavy Rock</Link>
+        <Link href="">Só Rock Bão</Link>
+        <Link href="">Mix Forró</Link>
+        <Link href="">Top Gaming Tracks</Link>
+        <Link href="">Dance Hits</Link>
+        <Link href="">Playlist</Link>
+        <Link href="">Playlist</Link>
+        <Link href="">Playlist</Link>
+        <Link href="">Playlist</Link>
+        <Link href="">Playlist</Link>
+        <Link href="">Playlist</Link>
       </nav>
     </aside>
   );
