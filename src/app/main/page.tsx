@@ -47,7 +47,6 @@ export default function Main(props: MainProps) {
         <Aside asideRef={asideRef} width={width} />
         <Draggable divRef={divRef} handleMouseDown={handleMouseDown} />
         <main
-          //   style={{ width: `calc(100vw-(${width}/100vw)*100)` }}
           className="flex flex-1 flex-col h-auto relative text-white z-20"
         >
           <section className="container header-info">

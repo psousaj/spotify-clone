@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export function Aside({ asideRef, width }: AsideProps) {
   return (
@@ -163,25 +164,33 @@ export function Header({ open, setOpen }: HeaderProps) {
             <div className="modal-content">
               <ul className="w-full text-sm">
                 <li>
-                  <button>
-                    Conta <ExternalLink />
-                  </button>
+                  <Link href="">
+                    <button>
+                      Conta <ExternalLink />
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button>Perfil</button>
+                  <Link href="">
+                    <button>Perfil</button>
+                  </Link>
                 </li>
                 <li>
-                  <button>
-                    Faça upgrade para o premium <ExternalLink />
-                  </button>
+                  <Link href="">
+                    <button>
+                      Faça upgrade para o premium <ExternalLink />
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/configuracoes">
+                  <Link href="/configuracoes">
                     <button>Configurações</button>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <button>Sair</button>
+                  <Link href="">
+                    <button>Sair</button>
+                  </Link>
                 </li>
               </ul>
             </div>
